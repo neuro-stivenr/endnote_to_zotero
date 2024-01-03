@@ -15,7 +15,7 @@ dict_filedialog_cmd = {
     'Darwin': "osascript -e 'tell application (path to frontmost application as text)\nset myFile to choose file\nPOSIX path of myFile\nend'"
 }
 
-def get_loffice_convert(loffice_custom_path: str = None):
+def get_loffice_convert(loffice_custom_path = None):
     loffice_path = dict_loffice_path.get(platform.system())
     if loffice_path is None:
         raise Exception('Platform is not supported.')
@@ -47,16 +47,16 @@ def obtain_user_credentials():
         api_key = input()
     return user_id, api_key
 
-def zotero_user_login(user_id: str, api_key: str) -> zotero.Zotero:
+def zotero_user_login(user_id, api_key):
     return zotero.Zotero(user_id, "user", api_key)
 
-def get_collection_names(collections: list[dict]) -> list[str]:
+def get_collection_names(collections):
     return [
         collection['data']['name']
         for collection in collections
     ]
 
-def query_user_collection(client: zotero.Zotero) -> dict:
+def query_user_collection(client):
     collections = client.collections()
     collection_names = get_collection_names(collections)
     menu = TerminalMenu(
@@ -68,12 +68,12 @@ def query_user_collection(client: zotero.Zotero) -> dict:
     print('Collection:', chosen_collection['data']['name'])
     return chosen_collection
 
-def get_collection_items(client: zotero.Zotero, collection: dict):
+def get_collection_items(client, collection):
     collection_items = client.collection_items(collection['key'])
     print('Number of items:', len(collection_items))
     return collection_items
 
-def update_doc_html(filename_html: str, dict_items: dict, user_id: str):
+def update_doc_html(filename_html, dict_items, user_id):
     paper_html = None
     with open(filename_html) as handle:
         paper_html = handle.read()
