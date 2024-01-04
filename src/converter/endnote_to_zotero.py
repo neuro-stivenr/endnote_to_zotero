@@ -99,6 +99,7 @@ def main():
     filedialog = get_filedialog_func()
     filename = filedialog()
     filename_ext = Path(filename).suffix
+    os.chdir(Path(filename).parent)
     if filename_ext not in ['.docx', '.doc']:
         raise Exception('Unsupported input format. Must be .doc or .docx')
     filename_odt = filename.replace(filename_ext, '.odt')
