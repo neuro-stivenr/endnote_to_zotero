@@ -8,9 +8,9 @@ Currently only works on Mac, but it should be fairly straightforward to make it 
 
 1. EndNote + Microsoft Word Cite-While-You-Write Plugin
 2. Zotero + LibreOffice Plugin
-3. (LibreOffice)[https://www.libreoffice.org/download/download-libreoffice]
-4. (Zotero ODF Scan Plugin)[https://zotero-odf-scan.github.io/zotero-odf-scan]
-5. You might need to install (Java)[https://www.oracle.com/java/technologies/downloads/#jdk21-mac] for the LibreOffice Zotero plugin.
+3. [LibreOffice](https://www.libreoffice.org/download/download-libreoffice)
+4. [Zotero ODF Scan Plugin](https://zotero-odf-scan.github.io/zotero-odf-scan)
+5. You might need to install [Java](https://www.oracle.com/java/technologies/downloads) for the LibreOffice Zotero plugin.
 6. Python 3 w/ pip
 
 ## Installation
@@ -35,7 +35,7 @@ Double click on endnote_to_zotero/endnote/RTF.ens and then "Save As..." the styl
 
 Make sure that in your Zotero -> Preferences -> Export -> Item Format
 the "Scannable Cite" option is selected. If it is unavailable, you must download "Scannable Cite.js" file from
-the (Zotero ODF Scan Plugin)[https://zotero-odf-scan.github.io/zotero-odf-scan] page and save it to your $HOME/Zotero/translators directory.
+the [Zotero ODF Scan Plugin](https://zotero-odf-scan.github.io/zotero-odf-scan) page and save it to your $HOME/Zotero/translators directory.
 Make sure the file is saved with a .js and not a .txt extension.
 
 ## Usage
